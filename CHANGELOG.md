@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Add the Clean Text / 文字列を整える node with selected-column trimming and optional Unicode lowercase/uppercase conversion before joins or deduplication.
+- Preserve non-string values and upstream tables, report empty/missing selections, and retain settings in Pipeline JSON, Recipes, and Undo / Redo.
+- Add Japanese/English controls and help, plus transform, evaluator, history, and persistence regression coverage.
+
 ## 1.0.0 - 2026-09-17
 
 ### Changed
