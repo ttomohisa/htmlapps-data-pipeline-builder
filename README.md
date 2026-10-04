@@ -22,12 +22,18 @@ GitHub Pages delivers the initial HTML. After it loads, file parsing, transforms
 
 - **Build transformations visually** — Connect Input, Transform, Join / Union, Group By, and Output nodes instead of writing a one-off script for every file.
 - **Work with common table formats** — Read CSV / TSV / JSONL / flat Parquet and write CSV / JSONL / flat Snappy-compressed Parquet.
-- **Handle everyday cleanup steps** — Select or rename columns, sort, limit rows, cast types, deduplicate, filter rows, and handle Null values.
+- **Handle everyday cleanup steps** — Select or rename columns, sort, limit rows, cast types, clean text, deduplicate, filter rows, and handle Null values.
 - **Combine and aggregate tables** — Join two inputs, Union 2–6 inputs, or group rows with Count / Sum / Average / Min / Max.
 - **Inspect intermediate results** — Check column names, inferred types, Null / empty counts, Parquet physical types, and up to 100 preview rows while building the pipeline.
 - **Reuse the same process** — Save a Pipeline JSON for backup or Git tracking, or keep a Recipe in the current browser and run it with different input files without replacing the current Canvas.
 - **Create several outputs at once** — Fan out one pipeline to CSV / JSONL / Parquet outputs, run them together, preview the results, then save only the files you need.
 - **Fully local processing** — The standalone app uses `connect-src 'none'`; selected data files stay in the browser and outputs are saved only when you explicitly choose to save them.
+
+### Clean Text before matching keys
+
+Connect Input → Clean Text → Deduplicate or Join. Select one or more columns, keep **Trim leading and trailing whitespace** on (the default), and optionally choose **Lowercase** or **Uppercase**. Case starts **Unchanged**. For example, ` Alice ` and `ALICE` both become `alice` with Trim + Lowercase.
+
+Only strings change; Null, numbers, booleans, other columns, row order and row count stay unchanged. Trim runs first using standard JavaScript Unicode rules. This does not perform locale-specific case conversion or full-width/half-width normalization. Missing columns and empty selections are errors. Settings support Undo / Redo and are included in saved Pipeline JSON and Recipes.
 
 ## Quick start
 

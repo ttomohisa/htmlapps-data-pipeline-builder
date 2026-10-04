@@ -353,6 +353,28 @@ function stableValueKey(value) {
   return `${typeof value}:${String(value)}`;
 }
 
+// Use locale-independent JavaScript Unicode semantics; do not normalize identifiers.
+function cleanText(data, options = {}) {
+  const { columns, trim = true, caseMode = 'unchanged' } = options;
+  if (!Array.isArray(columns) || !columns.length || !['unchanged', 'lowercase', 'uppercase'].includes(caseMode)) {
+    throw tableError('INVALID_CLEAN_TEXT', 'Select at least one column and a valid text case.');
+  }
+  requireColumns(data, columns);
+  const selected = new Set(columns);
+  const rows = data.rows.map(row => {
+    const result = { ...row };
+    for (const column of selected) {
+      if (typeof row[column] !== 'string') continue;
+      let value = trim ? row[column].trim() : row[column];
+      if (caseMode === 'lowercase') value = value.toLowerCase();
+      if (caseMode === 'uppercase') value = value.toUpperCase();
+      result[column] = value;
+    }
+    return result;
+  });
+  return cloneTable(data, { rows });
+}
+
 function deduplicateRows(data, columns = null) {
   const keys = Array.isArray(columns) && columns.length ? columns.map(String) : [...data.columns];
   requireColumns(data, keys);
@@ -733,6 +755,7 @@ const DataTableUtils = Object.freeze({
   sortRows,
   limitRows,
   castColumns,
+  cleanText,
   deduplicateRows,
   filterRows,
   handleNulls,
