@@ -250,3 +250,21 @@ if (-not $webrtcReadyText.Contains("options.requireReadyChannelOpen!==false&&(!r
   throw "WebRTC application-ready must wait for the designated DataChannel to open."
 }
 
+
+# Run the consumer regressions and the generated-artifact checks in CI as well as locally.
+$node = Get-Command node -ErrorAction SilentlyContinue
+if (-not $node) { throw "Node.js is required to run the application regression tests." }
+$testFiles = @(Get-ChildItem -LiteralPath (Join-Path $Root "tests") -Filter "*.test.mjs" | ForEach-Object { $_.FullName })
+$previousTimezone = $env:TZ
+$previousArtifactCheck = $env:VERIFY_OUTPUT_ARTIFACTS
+Push-Location $Root
+try {
+  $env:TZ = "UTC"
+  $env:VERIFY_OUTPUT_ARTIFACTS = "1"
+  & $node.Source --test @testFiles
+  if ($LASTEXITCODE -ne 0) { throw "Application regression tests failed." }
+} finally {
+  $env:TZ = $previousTimezone
+  $env:VERIFY_OUTPUT_ARTIFACTS = $previousArtifactCheck
+  Pop-Location
+}
