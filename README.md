@@ -62,7 +62,9 @@ The standalone HTML does not need a server for data processing and has no runtim
 4. For two or more inputs, use Join or Union. For summaries, add Group By and configure one or more aggregations.
 5. Connect CSV, JSONL, or Parquet Output nodes. One upstream table can fan out to several outputs.
 6. Select **Run all outputs**. Running the pipeline does not automatically download anything.
-7. Review each output and save the files you want.
+7. Review each output, edit **Save filename** if needed, and save the files you want.
+
+The Canvas result cards, result list, and Quick Recipe results let you rename each generated download without running the pipeline again. CSV / JSONL / Parquet extensions follow the generated format, including when an extension was already entered. Unsafe filename characters are replaced; an empty name becomes `output`. These names last for the current results only and do not change Output settings, Pipeline JSON, Recipes, or Undo / Redo. Running again starts from the saved Output settings.
 
 ### Reuse with Recipes
 

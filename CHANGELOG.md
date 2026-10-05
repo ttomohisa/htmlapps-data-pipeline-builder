@@ -4,6 +4,15 @@
 
 ### Added
 
+- Edit the download filename on generated Canvas and Quick Recipe result cards without rerunning or changing graph, Recipe, or history settings.
+- Keep in-session filename drafts synchronized across result views, with stale-result event guards and Japanese/English labels.
+
+### Fixed
+
+- Normalize terminal CSV / JSONL / Parquet extensions for the actual output format, preventing doubled JSONL and Parquet suffixes.
+
+### Previously added
+
 - Add the Clean Text / 文字列を整える node with selected-column trimming and optional Unicode lowercase/uppercase conversion before joins or deduplication.
 - Preserve non-string values and upstream tables, report empty/missing selections, and retain settings in Pipeline JSON, Recipes, and Undo / Redo.
 - Add Japanese/English controls and help, plus transform, evaluator, history, and persistence regression coverage.
