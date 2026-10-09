@@ -3,7 +3,7 @@
   "name": "Data Pipeline Builder",
   "nameJa": "データ変換パイプライン",
   "slug": "data-pipeline-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Build reusable local CSV / TSV / JSONL / Parquet pipelines with transforms, joins, aggregates, Recipes, and multi-format outputs.",
   "descriptionJa": "CSV / TSV / JSONL / Parquetの変換・結合・集計手順をRecipeとして再利用し、CSV / JSONL / Parquetへ出力する完全ローカル処理ツール。",
   "defaultLanguage": "auto",
