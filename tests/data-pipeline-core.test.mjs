@@ -185,7 +185,7 @@ test('v0.2 exposes a JSONL Input node without adding domain logic to Node Editor
 test('v0.2 icon and favicon use the supplied Data Pipeline Builder artwork', () => {
   const svg = fs.readFileSync(new URL('../assets/favicon.svg', import.meta.url), 'utf8');
   assert.match(svg, /viewBox="0 0 1095 1095"/);
-  assert.match(svg, /fill="#0c664e"/i);
+  assert.match(svg, /fill="#16624f"/i);
   assert.match(svg, /id="gear"/);
 });
 
@@ -627,16 +627,16 @@ test('v1.0.0 stable release metadata and release documentation are synchronized'
   const readme = fs.readFileSync(new URL('../README.md', import.meta.url), 'utf8');
   const readmeJa = fs.readFileSync(new URL('../README.ja.md', import.meta.url), 'utf8');
   const first = fs.readFileSync(new URL('../README-FIRST.txt', import.meta.url), 'utf8');
-  assert.equal(pkg.version, '1.0.0');
-  assert.equal(app.version, '1.0.0');
-  assert.match(html, /<span class="version">v1\.0\.0<\/span>/);
-  assert.match(html, /helpFormatsBody:'v1\.0\.0/);
+  assert.equal(pkg.version, '1.0.1');
+  assert.equal(app.version, '1.0.1');
+  assert.match(html, /<span class="version">v1\.0\.1<\/span>/);
+  assert.match(html, /helpFormatsBody:'v1\.0\.1/);
   assert.match(changelog, /## 1\.0\.0 - 2026-09-17/);
   assert.match(readme, /## 🚀 Live demo/);
   assert.match(readme, /assets\/screenshot-en\.png/);
   assert.match(readmeJa, /## 🚀 デモ/);
   assert.match(readmeJa, /assets\/screenshot\.png/);
-  assert.match(first, /v1\.0\.0/);
+  assert.match(first, /v1\.0\.1/);
   assert.ok(fs.existsSync(new URL('../assets/screenshot.png', import.meta.url)));
   assert.ok(fs.existsSync(new URL('../assets/screenshot-en.png', import.meta.url)));
 });

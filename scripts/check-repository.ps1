@@ -268,3 +268,6 @@ try {
   $env:VERIFY_OUTPUT_ARTIFACTS = $previousArtifactCheck
   Pop-Location
 }
+
+& node (Join-Path $Root "scripts/test-icon-normalization.cjs")
+if ($LASTEXITCODE -ne 0) { throw "Icon normalization checks failed." }

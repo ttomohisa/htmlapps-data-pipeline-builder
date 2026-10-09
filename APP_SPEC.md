@@ -1,5 +1,10 @@
 # Data Pipeline Builder / データ変換パイプライン
 
+## v1.0.1 — Icon normalization
+
+- Canonical background and matching artwork green: `#16624f`; background x/y radii exactly 25% of their respective dimensions.
+- Preserve artwork, padding, app behavior, and synchronized header/favicon/download/loader representations.
+
 ## 正式仕様書 + v0.1.0〜v1.0.0 開発計画
 
 Browser Kitty向けに、新しいノード型アプリ **Data Pipeline Builder / データ変換パイプライン** を開発する。

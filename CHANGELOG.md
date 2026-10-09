@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1 - 2026-10-09
+
+- Normalize icon brand color and exact 25% background corner radii without changing artwork.
+- Rebuild matching header, favicon, download alias, and self-extract representations.
+
 ## Unreleased
 
 ### Added
