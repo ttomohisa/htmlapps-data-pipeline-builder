@@ -10,6 +10,8 @@ A node-based, fully local browser tool for building repeatable CSV / TSV / JSONL
 
 Current pipeline scope: `CSV / TSV / JSONL / Parquet Input → transforms → Join / Union → Group By → CSV Output / JSONL Output / Parquet Output`.
 
+While a modal dialog is open, the page behind it stays still. Closing the last dialog restores page scrolling; an expanded editor keeps its existing scroll lock.
+
 ## 🚀 Live demo
 
 ### [Open Data Pipeline Builder on GitHub Pages](https://ttomohisa.github.io/htmlapps-data-pipeline-builder/)

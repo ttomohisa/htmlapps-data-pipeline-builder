@@ -257,15 +257,18 @@ if (-not $node) { throw "Node.js is required to run the application regression t
 $testFiles = @(Get-ChildItem -LiteralPath (Join-Path $Root "tests") -Filter "*.test.mjs" | ForEach-Object { $_.FullName })
 $previousTimezone = $env:TZ
 $previousArtifactCheck = $env:VERIFY_OUTPUT_ARTIFACTS
+$previousDialogArtifactCheck = $env:VERIFY_DIALOG_ARTIFACTS
 Push-Location $Root
 try {
   $env:TZ = "UTC"
   $env:VERIFY_OUTPUT_ARTIFACTS = "1"
+  $env:VERIFY_DIALOG_ARTIFACTS = "1"
   & $node.Source --test @testFiles
   if ($LASTEXITCODE -ne 0) { throw "Application regression tests failed." }
 } finally {
   $env:TZ = $previousTimezone
   $env:VERIFY_OUTPUT_ARTIFACTS = $previousArtifactCheck
+  $env:VERIFY_DIALOG_ARTIFACTS = $previousDialogArtifactCheck
   Pop-Location
 }
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2 - 2026-10-11
+
+- Keep the page behind native modal dialogs stationary, including nested dialogs, while preserving the expanded-workspace lock and existing dialog layouts.
+- Add source and shipped-artifact scroll-lock regressions to the canonical repository check.
+
 ## 1.0.1 - 2026-10-09
 
 - Normalize icon brand color and exact 25% background corner radii without changing artwork.

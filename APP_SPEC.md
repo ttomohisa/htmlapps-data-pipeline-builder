@@ -1,5 +1,11 @@
 # Data Pipeline Builder / データ変換パイプライン
 
+## v1.0.2 — Modal background scrolling
+
+- While any native dialog is modal, both document roots stop background scrolling. Closing the final modal restores normal scrolling without removing the independent expanded-workspace lock.
+- Preserve existing Help, confirmation, Recipe, preview, result, and expanded-editor geometry and dismissal behavior.
+- Verify JA/EN desktop and short mobile viewports, internal tails, nested open/close, Escape, focus restoration, and source/readable/root/self-extracted parity.
+
 ## v1.0.1 — Icon normalization
 
 - Canonical background and matching artwork green: `#16624f`; background x/y radii exactly 25% of their respective dimensions.
