@@ -10,6 +10,8 @@ CSV / TSV / JSONL / Parquetの変換手順をノードで組み、別のファ�
 
 現在の対応範囲: `CSV / TSV / JSONL / Parquet Input → 各種変換 → Join / Union（縦に連結）→ Group By / グループ集計（件数・合計・平均・最小・最大）→ CSV / JSONL / Parquet Output`。CSV出力 / JSONL出力 / Parquet出力を同じパイプラインからまとめて作成できます。
 
+ダイアログを開いている間は背後のページをスクロールさせません。最後のダイアログを閉じると元に戻り、拡大中のエディターのスクロール固定はそのまま維持されます。
+
 ## 🚀 デモ
 
 ### [GitHub PagesでData Pipeline Builderを開く](https://ttomohisa.github.io/htmlapps-data-pipeline-builder/)
