@@ -281,3 +281,7 @@ foreach ($HelpArtifact in @("src/index.template.html", "dist/index.html", "dist/
   & node (Join-Path $Root "scripts/test-help-copy.cjs") --html (Join-Path $Root $HelpArtifact)
   if ($LASTEXITCODE -ne 0) { throw "Help copy regression failed: $HelpArtifact" }
 }
+
+# Header icons and version visibility across source and generated releases.
+& node (Join-Path $Root "scripts/test-header-ui.cjs")
+if ($LASTEXITCODE -ne 0) { throw "Header UI regression failed." }

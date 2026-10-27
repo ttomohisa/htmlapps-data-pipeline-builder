@@ -1,4 +1,4 @@
-Data Pipeline Builder v1.0.2
+Data Pipeline Builder v1.0.3
 
 Start here:
 - README.ja.md / README.md: overview and limitations
