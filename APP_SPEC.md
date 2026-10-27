@@ -1795,3 +1795,6 @@ Node Editor Coreの既存機能をConsumer側で再実装しない。
 既存Coreに不足がある場合は、まずCore APIで解決できないか確認する。
 
 コード変更後は毎回、適切なGitコミットメッセージ案も提示する。
+## Header visibility
+
+Keep the header version visible on narrow smartphones without overlapping the app name or language/Help controls. Verify Japanese and English at 320px, 360px, 390px and desktop widths.

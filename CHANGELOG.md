@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3 - 2026-10-27
+
+- Keep the header version visible on narrow smartphones without overlapping the app name or language/Help controls.
+
 ## 1.0.2 - 2026-10-11
 
 - Keep the page behind native modal dialogs stationary, including nested dialogs, while preserving the expanded-workspace lock and existing dialog layouts.
