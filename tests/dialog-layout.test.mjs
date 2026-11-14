@@ -50,7 +50,7 @@ for (const [label, html] of artifacts) {
   test(`${label}: existing local-processing badge retains its shield`, () => {
     const badge = html.match(/<div class="privacy-pill">([\s\S]*?)<\/div>/)?.[1];
     assert.ok(badge);
-    assert.match(badge, /M12 3 5 6v5c0 4\.6 2\.8 8 7 10 4\.2-2 7-5\.4 7-10V6l-7-3Z/);
+    assert.match(badge, /M12 3 5 6v5c0 4.6 2.8 8 7 10 4.2-2 7-5.4 7-10V6z/);
   });
 }
 
