@@ -184,7 +184,7 @@ test('v0.2 exposes a JSONL Input node without adding domain logic to Node Editor
 
 test('v0.2 icon and favicon use the supplied Data Pipeline Builder artwork', () => {
   const svg = fs.readFileSync(new URL('../assets/favicon.svg', import.meta.url), 'utf8');
-  assert.match(svg, /viewBox="0 0 1095 1095"/);
+  assert.match(svg, /viewBox="54.00146 60.41748 984.8584 971.4917"/);
   assert.match(svg, /fill="#16624f"/i);
   assert.match(svg, /id="gear"/);
 });
